@@ -22,6 +22,7 @@ namespace WpfLiczby
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int[] Liczby;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,6 +53,16 @@ namespace WpfLiczby
             {
                 string[] tablicaLiczb = wpisaneLiczbyTextbox.Text.Split('\n'); ;
                 File.WriteAllLines(saveFileDialog.FileName, tablicaLiczb);
+            }
+        }
+
+        private void MenuItem_Click_Otworz(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog()==true)
+            {
+                string[] liczbyTekstowo = File.ReadAllLines(openFileDialog.FileName);
+                wpisaneLiczbyTextbox.Text =String.Join("\n",liczbyTekstowo );
             }
         }
     }

@@ -9,7 +9,9 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Plik">
-                <MenuItem Header="Otwórz"></MenuItem>
+                <MenuItem Header="Otwórz"
+                          Click="MenuItem_Click_Otworz"
+                          ></MenuItem>
                 <MenuItem Header="Zapisz"
                           Click="MenuItem_Click_Zapisz"
                           ></MenuItem>
